@@ -383,7 +383,41 @@ Pick a shipping rate
           'WWWABC123'
         ]
       }
-    ]
+    ],
+    value: 123.45, // customs declaration
+    international_forms: {
+      'ReasonForExport': 'SALE',
+      'ExportDate': moment().format('YYYYMMDD'),
+      'ExportingCarrier': 'UPS',
+      '#list': [{
+        'FormType': '01'
+      },
+      {
+        'FormType': '03'
+      }],
+      'Product': items.map(function (item) {
+        return {
+          'Description': item['description'],
+          'Unit': {
+            'Number': item['quantity'],
+            'UnitOfMeasurement': { 
+              'Code': 'PC'
+            },
+            'Value': item['quantity'],
+          },
+          'OriginCountryCode': item['origin'],
+          'NumberOfPackagesPerCommodity': '1',
+          'ProductWeight': {
+            'UnitOfMeasurement': {
+              'Code': item['weight_unit'] === 'LB' ? 'LBS' : 'KGS',
+            },
+            'Weight': item['weight']
+          }
+        };
+      }),
+      'InvoiceDate': moment().format('YYYYMMDD'),
+      'CurrencyCode': body['currency']
+    }
   }
 
   options = {
