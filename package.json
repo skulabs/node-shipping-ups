@@ -1,6 +1,6 @@
 {
   "name": "shipping-ups",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "description": "UPS API bindings for Node.JS",
   "keywords": [
     "shipping",
@@ -22,26 +22,17 @@
     "transaction references",
     "ups freight"
   ],
-  "author": {
-    "name": "uh-sem-blee, Co. | typefoo",
-    "email": "hello@typefoo.com"
-  },
-  "maintainers": [
-    {
-      "name": "jjosef",
-      "email": "john@uh-sem-blee.com"
-    }
-  ],
+  "author": "uh-sem-blee, Co",
+  "license": "AGPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/typefoo/node-shipping-ups"
+    "url": "https://github.com/uh-sem-blee/node-shipping-ups"
   },
   "main": "./lib/index.js",
   "directories": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "MIT",
   "dependencies": {
     "node.extend": "^1.1.5",
     "soap": "^0.9.1",
